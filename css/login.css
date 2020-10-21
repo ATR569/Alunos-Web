@@ -1,0 +1,55 @@
+body {
+}
+
+#formulario {
+    height: 80%;
+    width: 350px;
+    padding: 30px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    overflow: hidden;
+    background-color: #bbb;
+    /* background: rgba(255, 255, 255, 0.04); */
+    /* box-shadow: -1px 4px 28px 0px rgba(0,0,0,0.45); */
+}
+
+.main-icon span.fa{
+    font-size: 50px;
+    color: #fff;
+    margin-bottom: 1em;
+}
+
+.icon1{
+    margin: 0 0 1em;
+    padding: .8em 1em;
+    background: rgba(255, 255, 255, 0.94);
+}
+
+.fa {
+    display: inline-block;
+    margin: 0 10px 0 10px;
+}
+
+input {
+    display: inline-block;
+    background: transparent;
+    border: none;
+    outline: none;
+    letter-spacing: 1px;
+    color: #222;
+}
+
+button[type='submit']{
+    background-color: #007cc0;
+    color: #fff;
+    font-size: 15px;
+    text-transform: uppercase;
+    padding: .8em 2em;
+    letter-spacing: 1px;
+    display: inline-block;
+    outline: none;
+    border: none;
+    width: 100%;
+}
