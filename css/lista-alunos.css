@@ -1,0 +1,13 @@
+body {
+    background-color: #A9A9A9;
+}
+
+.container {
+    margin: 0 auto;
+    padding-top: 250px;
+}
+
+.button-detalhes {
+    width: 92px;
+    float:right;
+}
