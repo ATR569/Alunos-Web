@@ -11,46 +11,100 @@
 </head>
 
 <body>
-    <form class="form" id="formulario" autocomplete="off">
-        <div class="main-icon d-flex justify-content-center">
-            <span class="fa fa-eercast">
-            </span>
+    <div class="principal">
+        <div class="form-div">
+            <form class="form needs-validation bg-dark" novalidate id="formulario" autocomplete="off">
+                <div class="icon-principal d-flex justify-content-center">
+                    <span class="fa fa-eercast">
+                    </span>
+                </div>
+
+                <div class="col-md-12 mb-6 icon-ipt">
+                    <span class="fa fa-user"></span>
+                    <input type="text" id="ipt_nome" placeholder="Nome do aluno" required>
+                    <div class="valid-feedback validation">
+                        Ok!
+                    </div>
+                    <div class="invalid-feedback validation">
+                        Forneça o nome!
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-6 icon-ipt">
+                    <span class="fa fa-address-card"></span>
+                    <input type="text" id="ipt_matricula" placeholder="Matrícula" required>
+                    <div class="valid-feedback validation">
+                        Ok!
+                    </div>
+                    <div class="invalid-feedback validation">
+                        Forneça a matrícula!
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-6 icon-ipt">
+                    <span class="fa fa-envelope"></span>
+                    <input type="email" id="ipt_email" placeholder="Email" required>
+                    <div class="valid-feedback validation">
+                        Ok!
+                    </div>
+                    <div class="invalid-feedback validation">
+                        Forneça o email!
+                    </div>
+                </div>
+
+                <div class="col-md-12 mb-6 icon-ipt">
+                    <span class="fa fa-book"></span>
+                    <input type="text" id="ipt_curso" placeholder="Curso" required>
+                    <div class="valid-feedback validation">
+                        Ok!
+                    </div>
+                    <div class="invalid-feedback validation">
+                        Forneça o curso!
+                    </div>
+                </div>
+
+                <div class="cadastro-check">
+                    <label class="checkbox">
+                        <input type="checkbox" name="checkbox" checked>
+                        <i>
+                            Continuar conectado
+                        </i>
+                    </label>
+                </div>
+
+                <div class="d-flex justify-content-center">
+                    <button type="submit">Cadastrar</button>
+                </div>
+            </form>
         </div>
+    </div>
+</body>
 
-        <div class="col-md-12 mb-6 icon1">
-            <span class="fa fa-user"></span>
-            <input type="text" id="ipt_nome" placeholder="Nome do usuário">
-        </div>
-        <div class="col-md-12 mb-6 icon1">
-            <span class="fa fa-book"></span>
-            <input type="text" id="ipt_curso" placeholder="Curso">
-        </div>
 
-        <div class="d-flex justify-content-center">
-            <button type="submit">Entrar</button>
-        </div>
-    </form>
+<script>
 
-    <script>
+    const formulario = document.getElementById('formulario')
 
-        const formulario = document.getElementById('formulario')
+    formulario.addEventListener('submit', function (e) {
+        e.preventDefault()
+        e.stopPropagation();
 
-        formulario.addEventListener('submit', function (e) {
-            e.preventDefault()
+        formulario.classList.add('was-validated');
 
-            const formData = new FormData(this)
+        const formData = new FormData(this)
 
+        if (formulario.checkValidity()) {
             fetch('http://demo6232336.mockable.io/api/pizzaria', {
                 method: 'POST',
                 body: JSON.stringify({ "data": formData })
             }).then(async responseStream => {
                 const data = await responseStream.json()
-                console.log(data);
+                alert(`Aluno cadastrado: ${data.nome}`)
+                window.location.href = "./index.html";
             }).catch(error => console.log(error))
-        })
+        }
+    }, false)
 
-    </script>
-
-</body>
+</script>
 
 </html>
