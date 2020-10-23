@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" href="./css/lista-alunos.css">
-    <title>Document</title>
+    <title>Lista de Alunos</title>
 </head>
+
 <body>
     <div class="container">
         <table class="table table-dark table-hover" id="tabela">
@@ -17,15 +18,12 @@
                 <th scope="col">Email</th>
               </tr>
             </thead>
-            <tbody>
-              <tr>
-                <th scope="row">1</th>
-                <td>Ramon</td>
-                <td>ramomsales@hotmail.com</td>
-                <td><button class="button-detalhes">Detalhes</button></td>
-              </tr>
+            <tbody id="body-tabela">
             </tbody>
           </table>
     </div>
 </body>
+<script src="./js/jquery.min.js"></script>
+<script src="urls.js"></script>
+<script src="lista-alunos.js"></script>
 </html>

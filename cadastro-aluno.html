@@ -71,31 +71,8 @@
     </div>
 </body>
 
-
-<script>
-
-    const formulario = document.getElementById('formulario')
-
-    formulario.addEventListener('submit', function (e) {
-        e.preventDefault()
-        e.stopPropagation();
-
-        formulario.classList.add('was-validated');
-
-        const formData = new FormData(this)
-
-        if (formulario.checkValidity()) {
-            fetch('http://demo6232336.mockable.io/api/alunos', {
-                method: 'POST',
-                body: JSON.stringify({ "data": formData })
-            }).then(async responseStream => {
-                const data = await responseStream.json()
-                alert(`Aluno cadastrado: ${data.nome}`)
-                window.location.href = "./index.html";
-            }).catch(error => console.log(error))
-        }
-    }, false)
-
-</script>
+<script src="./js/jquery.min.js"></script>
+<script src="./urls.js"></script>
+<script src="./cadastro-aluno.js"></script>
 
 </html>
